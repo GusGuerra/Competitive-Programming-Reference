@@ -1,6 +1,6 @@
 #define INF 987654321
 
-//always remember do call dfs(0)
+//always remember to call dfs(0)
 //before calling calc() (uses parent matrix (Pai))
 
 const int MAXN = 43210;
