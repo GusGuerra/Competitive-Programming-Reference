@@ -28,7 +28,7 @@ void dfs(int v, int pai){
 		
 		if(!in[u]){
 			
-			dfs(u);
+			dfs(u, v);
 			filhos++;
 			
 			if(low[u] >= in[v]) corte = true;
