@@ -1,5 +1,3 @@
-#define pb push_back
-
 vector<int> g[2020]; // graph
 vector<int> rg[2020]; // reverse graph
 bool vis[2020];
