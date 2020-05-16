@@ -1,7 +1,3 @@
-//query for the sum (or min/max) of an interval in O(logn)
-//also can do range updates in O(logn)
-
-vector<long long> v;
 int st[800004];
 int lazy[800004];
  
