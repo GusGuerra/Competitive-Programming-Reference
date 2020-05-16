@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 const int MAXN = 101010;
 const int LOGN = 25;
 
