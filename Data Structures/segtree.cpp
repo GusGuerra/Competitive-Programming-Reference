@@ -1,6 +1,3 @@
-//Range sum/min/max query in O(logn)
-//can do updates in O(logn) (just single updates)
-
 void update(int nd, int l, int r, int pos){
 	
 	if(l == r){
@@ -8,10 +5,8 @@ void update(int nd, int l, int r, int pos){
 		return;
 	}
 	
-	if(pos < l || pos > r) return;
-	
-	int mid = (l + r)>>1;
-	int nxt = nd<<1;
+	int mid = (l + r)/2;
+	int nxt = nd*2;
 	
 	if(pos <= mid) update(nxt, l, mid, pos);
 	if(pos > mid) update(nxt + 1, mid + 1, r, pos);
@@ -24,8 +19,8 @@ int query(int nd, int l, int r, int lq, int rq){
 	if(r < lq || rq < l) return 0;
 	if(lq <= l && r <= rq) return st[nd];
 	
-	int mid = (l + r)>>1;
-	int nxt = nd<<1;
+	int mid = (l + r)/2;
+	int nxt = nd*2;
 	
 	return query(nxt, l, mid, lq, rq) + query(nxt + 1, mid + 1, r, lq, rq);
 }
