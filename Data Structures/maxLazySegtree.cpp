@@ -29,7 +29,7 @@ int query(int node, int l, int r, int lq, int rq){
 	if(lq > r || l > rq) return 0;
 	if(lq <= l && r <= rq) return st[node];
 	
-	max(query(nxt, l, mid, lq, rq) , query(nxt + 1, mid + 1, r, lq, rq));
+	return max(query(nxt, l, mid, lq, rq) , query(nxt + 1, mid + 1, r, lq, rq));
 }
 
 void update(int node, int l, int r, int lu, int ru, int val){
