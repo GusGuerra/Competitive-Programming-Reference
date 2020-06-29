@@ -23,11 +23,13 @@ void propagate(int node){
 
 int query(int node, int l, int r, int lq, int rq){
 	
-	int nxt = node<<1;
-	int mid = (l + r)>>1;
+	int nxt = node*2;
+	int mid = (l + r)/2;
 	
 	if(lq > r || l > rq) return 0;
 	if(lq <= l && r <= rq) return st[node];
+	
+	propagate(node);
 	
 	return max(query(nxt, l, mid, lq, rq) , query(nxt + 1, mid + 1, r, lq, rq));
 }
