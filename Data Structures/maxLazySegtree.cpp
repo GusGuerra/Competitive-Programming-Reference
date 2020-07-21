@@ -1,8 +1,8 @@
 const int MAXN = 201010;
 
 int base_array[MAXN + 16]; // self-explanatory
-int st[4*MAXN]; //segment tree array
-int lazy[4*MAXN]; // lazy propagation array
+int st[8*MAXN]; //segment tree array
+int lazy[8*MAXN]; // lazy propagation array
 
 void propagate(int node){
 	
