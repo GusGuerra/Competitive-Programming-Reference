@@ -15,7 +15,7 @@ bool dfs_kuhn(int v){
 	vis[v] = true;
 	
 	for(int u : g[v]){
-		if(match[u] < 0 || dfs(match[u])){
+		if(match[u] < 0 || dfs_kuhn(match[u])){
 			match[u] = v;
 			match[v] = u;
 			return true;
@@ -36,7 +36,7 @@ int kuhn(){
 	for(int run = 1 ; run ; ){
 		run = 0; memset(vis, false, sizeof vis);
 		for(int i = 0 ; i < n ; i ++){
-			if(match[i] < 0 || dfs(i)){
+			if(match[i] < 0 || dfs_kuhn(i)){
 				maxmt++;
 				run = 1;
 			}
